@@ -1,0 +1,427 @@
+council: Doncaster
+nppf_edition: December 2024
+routing:
+  core:
+  - principle_of_development
+  - design_and_character
+  - residential_amenity
+  - highways_and_parking
+  keyword_rules:
+  - issue: flood_risk_and_drainage
+    keywords:
+    - flood*
+    - drainage
+    - surface water
+    - yorkshire water
+    - sewer*
+    - environment agency
+  - issue: trees_and_ecology
+    keywords:
+    - tree
+    - ecolog*
+    - bat
+    - biodiversity
+    - hedgerow
+    - protected species
+  - issue: contamination_and_pollution
+    keywords:
+    - contaminat*
+    - pollution
+    - noise
+    - gas pipeline
+    - gas main
+    - air quality
+    - hazard*
+  - issue: houses_in_multiple_occupation
+    keywords:
+    - hmo
+    - multiple occupation
+    - article 4
+    proposal_only: true
+  - issue: countryside_and_green_belt
+    keywords:
+    - countryside
+    - green belt
+    - rural
+    - agricultur*
+    - barn
+    proposal_only: true
+  - issue: public_health_and_hot_food
+    keywords:
+    - takeaway
+    - hot food
+    - public health
+    - a5
+    - sui generis
+    proposal_only: true
+  - issue: community_facilities
+    keywords:
+    - community use
+    - community facilit*
+    - church hall
+    - leisure
+    proposal_only: true
+  - issue: heritage_and_conservation
+    keywords:
+    - conservation area
+    - listed
+    - heritage
+    proposal_only: true
+issues:
+  principle_of_development:
+    label: Principle of development
+    query: settlement hierarchy residential policy area acceptable uses town centre change of use
+    local_plan:
+    - policy: 1
+      expect: settlement hierarchy
+    - policy: 10
+      expect: residential policy areas
+    - policy: 22
+      expect: main town centre uses
+    - policy: 23
+      expect: town, district
+    - policy: 68
+      generated: true
+    - policy: 72
+      generated: true
+    - policy: 70
+      generated: true
+    nppf:
+    - para: 11
+      expect: presumption in favour of sustainable development
+    - para: 124
+      expect: effective use of land
+    - para: 54
+      generated: true
+    - para: 91
+      generated: true
+    - para: 90
+      generated: true
+    - para: 92
+      generated: true
+    - para: 94
+      generated: true
+    statute_query: determination in accordance with the development plan material considerations permitted development
+      change of use
+  design_and_character:
+    label: Design and character
+    query: good urban design character local distinctiveness materials scale massing
+    required_evidence:
+    - label: drawings showing the proposal (plans or elevations)
+      kinds:
+      - drawings
+    local_plan:
+    - policy: 41
+      expect: character and local distinctiveness
+    - policy: 42
+      expect: good urban design
+    - policy: 44
+      expect: residential design
+    - policy: 45
+      generated: true
+    - policy: 46
+      generated: true
+    nppf:
+    - para: 135
+      expect: function well
+    - para: 139
+      expect: not well designed
+    - para: 133
+      generated: true
+    - para: 141
+      generated: true
+    - para: 166
+      generated: true
+    extra_sources:
+    - National Design Guide
+  heritage_and_conservation:
+    label: Heritage and conservation area
+    query: conservation area character appearance listed building heritage significance harm
+    required_evidence:
+    - label: heritage statement or design and access statement
+      applies_if: heritage_designation
+      kinds:
+      - heritage_statement
+      - design_and_access_statement
+    local_plan:
+    - policy: 34
+      expect: historic environment
+    - policy: 36
+      expect: listed buildings
+    - policy: 37
+      expect: conservation areas
+    - policy: 25
+      generated: true
+    - policy: 6
+      generated: true
+    - policy: 68
+      generated: true
+    nppf:
+    - para: 202
+      expect: heritage assets range
+    - para: 203
+      expect: positive strategy
+    - para: 210
+      expect: take account of
+    - para: 212
+      expect: great weight
+    - para: 220
+      generated: true
+    - para: 191
+      generated: true
+    - para: 214
+      generated: true
+  residential_amenity:
+    label: Residential amenity and housing standards
+    query: residential amenity overlooking overshadowing privacy daylight outlook space standards garden size
+    local_plan:
+    - policy: 44
+      expect: residential design
+    - policy: 45
+      expect: housing design standards
+    - policy: 10
+      generated: true
+    - policy: 46
+      generated: true
+    - policy: 27
+      generated: true
+    nppf:
+    - para: 135
+      expect: function well
+    - para: 112
+      generated: true
+    - para: 159
+      generated: true
+    - para: 113
+      generated: true
+    - para: 54
+      generated: true
+    - para: 182
+      generated: true
+    extra_sources:
+    - South Yorkshire Residential Design Guide
+  highways_and_parking:
+    label: Highways, access and parking
+    query: highway safety access parking cycle storage sustainable transport servicing
+    local_plan:
+    - policy: 13
+      expect: sustainable transport
+    - policy: 16
+      expect: cycling
+    - policy: 15
+      generated: true
+    - policy: 14
+      generated: true
+    - policy: 19
+      generated: true
+    - policy: 12
+      generated: true
+    nppf:
+    - para: 115
+      expect: assessing sites
+    - para: 116
+      expect: highways grounds
+    - para: 117
+      expect: applications for development should
+    - para: 109
+      generated: true
+    - para: 114
+      generated: true
+    extra_sources:
+    - Technical and Developer Requirements SPD
+  flood_risk_and_drainage:
+    label: Flood risk and drainage
+    query: flood zone sequential test exception test drainage surface water sustainable drainage floor levels
+    required_evidence:
+    - label: flood risk assessment or flood evidence
+      applies_if: flood_zone
+      kinds:
+      - flood_risk_assessment
+    local_plan:
+    - policy: 56
+      expect: drainage
+    - policy: 57
+      expect: flood risk management
+    - policy: 60
+      generated: true
+    - policy: 13
+      generated: true
+    nppf:
+    - para: 170
+      expect: flooding
+    - para: 173
+      expect: sequential
+    - para: 175
+      expect: sequential test
+    - para: 181
+      expect: flood risk is not increased
+    - para: 177
+      generated: true
+    - para: 182
+      generated: true
+    - para: 171
+      generated: true
+    - para: 178
+      generated: true
+    - para: 180
+      generated: true
+    extra_sources:
+    - Flood Risk SPD
+  trees_and_ecology:
+    label: Trees and ecology
+    query: trees hedgerows ecology biodiversity protected species bats net gain
+    local_plan:
+    - policy: 29
+      expect: ecological networks
+    - policy: 30
+      expect: biodiversity
+    - policy: 32
+      expect: woodlands, trees
+    - policy: 48
+      expect: landscaping
+    nppf:
+    - para: 187
+      expect: biodiversity
+    - para: 193
+      expect: biodiversity
+    - para: 136
+      generated: true
+    - para: 192
+      generated: true
+    - para: 150
+      generated: true
+    - para: 213
+      generated: true
+  contamination_and_pollution:
+    label: Contamination, pollution and noise
+    query: contamination land remediation noise pollution air quality nuisance
+    local_plan:
+    - policy: 54
+      expect: pollution
+    - policy: 55
+      expect: contamination
+    nppf:
+    - para: 187
+      expect: contaminated
+    - para: 196
+      expect: ground conditions
+    - para: 198
+      expect: pollution on health
+    - para: 197
+      generated: true
+    - para: 201
+      generated: true
+    - para: 229
+      generated: true
+  houses_in_multiple_occupation:
+    label: Houses in multiple occupation
+    query: houses in multiple occupation HMO article 4 direction concentration amenity
+    local_plan:
+    - policy: 9
+      expect: multiple occupation
+    - policy: 4
+      generated: true
+    extra_sources:
+    - HMO Article 4 Direction
+    nppf:
+    - para: 54
+      generated: true
+    - para: 88
+      generated: true
+    - para: 125
+      generated: true
+    - para: 98
+      generated: true
+    - para: 121
+      generated: true
+  countryside_and_green_belt:
+    label: Countryside and green belt
+    query: countryside policy area replacement dwelling rural development green belt
+    local_plan:
+    - policy: 25
+      expect: countryside
+    - policy: 33
+      expect: landscape
+    - policy: 26
+      generated: true
+    - policy: 6
+      generated: true
+    - policy: 68
+      generated: true
+    - policy: 66
+      generated: true
+    nppf:
+    - para: 87
+      expect: locational requirements
+    - para: 88
+      expect: rural areas
+    - para: 89
+      expect: rural areas
+    - para: 154
+      expect: inappropriate
+    - para: 155
+      expect: green belt
+    - para: 148
+      generated: true
+    - para: 150
+      generated: true
+    - para: 143
+      generated: true
+    - para: 67
+      generated: true
+    - para: 153
+      generated: true
+    extra_sources:
+    - Rural Development SPD
+  public_health_and_hot_food:
+    label: Public health and hot food takeaways
+    query: hot food takeaway food and drink uses health obesity schools proximity centre
+    local_plan:
+    - policy: 24
+      expect: food and drink uses
+    - policy: 50
+      expect: health
+    - policy: 22
+      generated: true
+    - policy: 72
+      generated: true
+    - policy: 70
+      generated: true
+    nppf:
+    - para: 96
+      expect: healthy, inclusive and safe
+    - para: 97
+      expect: hot food takeaways
+    - para: 125
+      generated: true
+    - para: 91
+      generated: true
+    - para: 123
+      generated: true
+    - para: 101
+      generated: true
+  community_facilities:
+    label: Community facilities
+    query: loss of community facility education leisure change of use retention
+    local_plan:
+    - policy: 51
+      expect: community
+    - policy: 52
+      generated: true
+    - policy: 53
+      generated: true
+    - policy: 68
+      generated: true
+    nppf:
+    - para: 98
+      expect: social, recreational and cultural facilities
+    - para: 200
+      generated: true
+    - para: 20
+      generated: true
+    - para: 88
+      generated: true
+    - para: 53
+      generated: true
+    extra_sources:
+    - Loss of Community Facilities SPD

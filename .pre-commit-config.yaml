@@ -1,0 +1,46 @@
+# Tool hooks run through `uv run` so everyone uses the versions pinned in uv.lock.
+# Setup once per clone: `uv sync && uv run pre-commit install --install-hooks`
+default_install_hook_types: [pre-commit, pre-push]
+exclude: ^(README\.md$|data/|outputs/|predictions/archive/|decision-parsing/|uv\.lock$)
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+        args: [--markdown-linebreak-ext=md]
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
+        args: [--fix=lf]
+      - id: check-yaml
+      - id: check-toml
+      - id: check-json
+      - id: check-merge-conflict
+      - id: check-added-large-files
+        args: [--maxkb=1000]
+      - id: detect-private-key
+
+  - repo: local
+    hooks:
+      - id: isort
+        name: isort
+        entry: uv run isort
+        language: system
+        types: [python]
+      - id: black
+        name: black
+        entry: uv run black
+        language: system
+        types: [python]
+      - id: ruff
+        name: ruff
+        entry: uv run ruff check --fix --exit-non-zero-on-fix
+        language: system
+        types: [python]
+      - id: mypy
+        name: mypy
+        entry: uv run mypy
+        language: system
+        types: [python]
+        pass_filenames: false
+        stages: [pre-push]

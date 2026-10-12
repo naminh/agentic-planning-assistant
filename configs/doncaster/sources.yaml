@@ -1,0 +1,119 @@
+council: Doncaster
+sources:
+- label: Doncaster Local Plan
+  path: local_policy/Doncaster_Local_Plan_Adopted_23_Sept_2021.json
+  captions: true
+  version: Adopted 23 September 2021
+  published: '2021-09-23'
+  url: https://www.doncaster.gov.uk/services/planning/local-plan
+- label: NPPF
+  path: national_policy/National_Planning_Policy_Framework_December_2024.json
+  version: December 2024
+  published: 2024-12
+  url: https://www.gov.uk/government/publications/national-planning-policy-framework--2
+- label: National Design Guide
+  path: national_policy/National_design_guide.json
+  version: '2021'
+  published: '2021'
+  url: https://www.gov.uk/government/publications/national-design-guide
+- label: Flood Risk SPD
+  path: local_policy/spds/Flood_Risk_SPD_Adopted.json
+  captions: true
+  version: adopted (date not stated in file)
+  url: https://www.doncaster.gov.uk/services/planning/ldf-supplementary-planning-documents
+- label: Technical and Developer Requirements SPD
+  path: local_policy/spds/Technical_and_Developer_Requirements_SPD_Adopted.json
+  captions: true
+  version: adopted (date not stated in file)
+  url: https://www.doncaster.gov.uk/services/planning/ldf-supplementary-planning-documents
+- label: South Yorkshire Residential Design Guide
+  path: local_policy/spds/South_Yorkshire_Residential_Design_Guide_January_2011.json
+  version: January 2011
+  published: 2011-01
+- label: Rural Development SPD
+  path: local_policy/spds/Rural_Development_SPD_Adopted_Version.json
+  captions: true
+  version: adopted (date not stated in file)
+  url: https://www.doncaster.gov.uk/services/planning/ldf-supplementary-planning-documents
+- label: Loss of Community Facilities SPD
+  path: local_policy/spds/Loss_of_Community_Facilities_and_Open_Space_SPD_Adopted.json
+  version: adopted (date not stated in file)
+  url: https://www.doncaster.gov.uk/services/planning/ldf-supplementary-planning-documents
+- label: Local Labour Agreement SPD
+  path: local_policy/spds/Local_Labour_Agreement_SPD_Adopted.json
+  version: adopted (date not stated in file)
+  url: https://www.doncaster.gov.uk/services/planning/ldf-supplementary-planning-documents
+- label: HMO Article 4 Direction
+  path: local_policy/houses_in_multiple_occupation_article_4_direction.json
+  version: direction (date not stated in file)
+  url: https://www.doncaster.gov.uk/services/planning/houses-in-multiple-occupation-article-4-direction
+  ocr: true
+- label: Town Centre Masterplan
+  path: local_policy/doncaster_town_centre_masterplan.json
+  version: masterplan (date not stated in file)
+  url: https://www.doncaster.gov.uk/services/planning/doncaster-town-centre-masterplan
+- label: Bessacarr Conservation Area Appraisal
+  path: local_policy/conservation_areas/bessacarr/bessacarr_conservation_area_appraisal_revised.json
+  captions: true
+  version: revised appraisal (date not stated in file)
+  url: https://www.doncaster.gov.uk/services/planning/bessacarr-conservation-area
+  default_search: false
+  conservation_area: bessacarr
+- label: High Street Conservation Area Review
+  path: local_policy/conservation_areas/doncaster_high_street/doncaster_high_street_conservation_area_appraisal_review.json
+  version: review (date not stated in file)
+  url: https://www.doncaster.gov.uk/services/planning/doncaster-high-street-conservation-area
+  default_search: false
+  conservation_area: doncaster_high_street
+- label: High Street Conservation Area Appraisal (part 1)
+  path: local_policy/conservation_areas/doncaster_high_street/doncaster_high_street_conservation_area_appraisal_pages_001_051.json
+  version: appraisal, split into four PDFs; page numbers are relative to each part (date not stated in file)
+  url: https://www.doncaster.gov.uk/services/planning/doncaster-high-street-conservation-area
+  default_search: false
+  group: high_street_appraisal
+  conservation_area: doncaster_high_street
+- label: High Street Conservation Area Appraisal (part 2)
+  path: local_policy/conservation_areas/doncaster_high_street/doncaster_high_street_conservation_area_appraisal_pages_052_135.json
+  version: appraisal, split into four PDFs; page numbers are relative to each part (date not stated in file)
+  url: https://www.doncaster.gov.uk/services/planning/doncaster-high-street-conservation-area
+  default_search: false
+  group: high_street_appraisal
+  conservation_area: doncaster_high_street
+- label: High Street Conservation Area Appraisal (part 3)
+  path: local_policy/conservation_areas/doncaster_high_street/doncaster_high_street_conservation_area_appraisal_pages_136_195.json
+  version: appraisal, split into four PDFs; page numbers are relative to each part (date not stated in file)
+  url: https://www.doncaster.gov.uk/services/planning/doncaster-high-street-conservation-area
+  default_search: false
+  group: high_street_appraisal
+  conservation_area: doncaster_high_street
+- label: High Street Conservation Area Appraisal (part 4)
+  path: local_policy/conservation_areas/doncaster_high_street/doncaster_high_street_conservation_area_appraisal_pages_196_234.json
+  version: appraisal, split into four PDFs; page numbers are relative to each part (date not stated in file)
+  url: https://www.doncaster.gov.uk/services/planning/doncaster-high-street-conservation-area
+  default_search: false
+  group: high_street_appraisal
+  conservation_area: doncaster_high_street
+- label: Planning and Compulsory Purchase Act 2004
+  path: national_policy/Planning_and_Compulsory_Purchase_Act_2004.json
+  version: as published on legislation.gov.uk (point-in-time not recorded)
+  url: https://www.legislation.gov.uk/ukpga/2004/5/contents
+  default_search: false
+  group: legislation
+- label: Town and Country Planning Act 1990
+  path: national_policy/Town_and_Country_Planning_Act_1990.json
+  version: as published on legislation.gov.uk (point-in-time not recorded)
+  url: https://www.legislation.gov.uk/ukpga/1990/8/contents
+  default_search: false
+  group: legislation
+- label: Local Planning Regulations 2012
+  path: national_policy/Town_and_Country_Planning_Local_Planning_Regs_2012.json
+  version: as published on legislation.gov.uk (point-in-time not recorded)
+  url: https://www.legislation.gov.uk/uksi/2012/767/contents/made
+  default_search: false
+  group: legislation
+- label: Permitted Development Rights (Schedule 2)
+  path: national_policy/Town_and_Country_Planning_Schedule_2_Permitted_Development_Rights.json
+  version: as published on legislation.gov.uk (point-in-time not recorded)
+  url: https://www.legislation.gov.uk/uksi/2015/596/schedule/2
+  default_search: false
+  group: legislation

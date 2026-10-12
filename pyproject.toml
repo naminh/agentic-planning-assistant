@@ -1,0 +1,126 @@
+[project]
+name = "agentic-planning-assistant"
+version = "0.1.0"
+description = "An agentic LLM pipeline that drafts grounded decisions on housing planning applications"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "python-dotenv>=1.1.1",
+    "jinja2>=3.1.6",
+    "kreuzberg>=4.2.2",
+    "loguru>=0.7.3",
+    "mypy>=2.1.0",
+    "openai>=1.50.0",
+    "openai-agents>=0.13.3",
+    "pandas>=3.0.3",
+    "pydantic>=2.0.0",
+    "reportlab>=4.4.9",
+    "requests>=2.32.0",
+    "ruff>=0.14.14",
+    "typer>=0.21.1",
+    "pillow>=12.3.0",
+    "langsmith>=0.14.4",
+    "pyyaml>=6.0.3",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
+[tool.hatch.build.targets.wheel.sources]
+"src/" = ""
+
+[project.scripts]
+parser = "parser.main:app"
+openrouter-status = "openrouter_status:status"
+assess = "main:app"
+
+[project.optional-dependencies]
+embeddings = [
+    "fastembed>=0.5",
+]
+
+[dependency-groups]
+dev = [
+    "httpx>=0.28.1",
+    "ipykernel>=7.4.0",
+    "pytest>=8.3.5",
+    "black>=26.1.0",
+    "isort>=8.0.0",
+    "pre-commit>=4.0.0",
+]
+
+[tool.black]
+line-length = 88
+target-version = ["py312"]
+extend-exclude = '''
+/(
+    \.venv
+  | \.cache
+  | data
+  | outputs
+  | decision-parsing
+)/
+'''
+
+[tool.isort]
+profile = "black"
+line_length = 88
+py_version = 312
+known_first_party = ["src"]
+skip_gitignore = true
+extend_skip = ["data", "outputs", "decision-parsing"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+extend-exclude = ["data", "outputs", "decision-parsing"]
+
+[tool.ruff.lint]
+# Import sorting is owned by isort (profile=black), so "I" is not selected here.
+select = [
+    "F",    # pyflakes
+    "E",    # pycodestyle errors
+    "W",    # pycodestyle warnings
+    "UP",   # modern syntax updates
+    "B",    # flake8-bugbear
+    "Q",    # consistent quotes
+    "N",    # naming conventions
+    "C4",   # comprehensions
+    "SIM",  # simplifications
+    "RUF",  # ruff-specific
+    "D201",
+    "D202",
+    "D215",
+    "T201",
+]
+ignore = [
+    "B008",
+    "E501",   # line length is black's job
+    "W291",
+    "W293",
+    "RUF001", "RUF002", "RUF003",  # typographic punctuation is deliberate
+]
+fixable = ["ALL"]
+
+[tool.ruff.lint.per-file-ignores]
+"scripts/*" = ["T201"]
+
+[tool.mypy]
+disallow_any_generics = true
+disallow_untyped_defs = true
+disallow_untyped_globals = true
+ignore_missing_imports = true
+show_error_codes = true
+strict = false
+warn_return_any = true
+plugins = ['pydantic.mypy']
+mypy_path = "src"
+files = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = [".", "src"]

@@ -1,0 +1,37 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.env
+.venv
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# macOS
+.DS_Store
+
+.*cache
+
+# Bloat
+.json
+
+
+/extracted/*
+
+# Generated run artefacts
+outputs/*/bundle.json
+outputs/eval_dev.json
+.lavish/
+outputs/runs/
+outputs/eval_cache/
+outputs/eval_jev.md
+outputs/eval_jev.json
+
+# Local-only material
+REPORT.md
+outputs/
+.cache/
+CLAUDE.md
